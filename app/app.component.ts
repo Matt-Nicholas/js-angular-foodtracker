@@ -5,6 +5,9 @@ import {Meal} from './meal'
   template: `
   <div class="container">
     <h1>Eat It!</h1>
+    <new-meal
+      (newMealSender)="addMeal($event)"
+    ></new-meal>
     <div *ngFor="let meal of mealList">
       <h4>{{meal.name}}</h4>
     </div>
@@ -25,5 +28,8 @@ export class AppComponent {
       total += this.mealList[i].calories;
     }
     return total;
+  }
+  addMeal(newMealFromChild: Meal){
+    this.mealList.push(newMealFromChild);
   }
 }
