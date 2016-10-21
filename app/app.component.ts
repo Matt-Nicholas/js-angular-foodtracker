@@ -8,9 +8,9 @@ import {Meal} from './meal'
     <new-meal
       (newMealSender)="addMeal($event)"
     ></new-meal>
-    <div *ngFor="let meal of mealList">
-      <h4>{{meal.name}}</h4>
-    </div>
+    <meal-list
+      [childMealList]="mealList"
+    ></meal-list>
     <h3>Total calories: {{calorieTotal()}}</h3>
   </div>
   `
