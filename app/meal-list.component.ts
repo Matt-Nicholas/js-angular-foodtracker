@@ -10,11 +10,14 @@ import {Meal} from './meal';
       <option value="highCal">Show High-Calorie Foods</option>
       <option value="lowCal" >Show Low-Calorie Foods</option>
     </select>
-    <div *ngFor="let meal of childMealList | calFilter:selectedCals">
-      <h4>{{meal.name}}</h4>
-      <h5>{{meal.details}}</h5>
-      <h6>Cals: {{meal.calories}}</h6>
-      <button (click)="editButtonHasBeenClicked(meal)">Edit</button>
+    <div class="scroll-box">
+      <div *ngFor="let meal of childMealList | calFilter:selectedCals">
+        <h4>{{meal.name}}</h4>
+        <h5>{{meal.details}}</h5>
+        <h6 [class.high-cal]="meal.calories > 500">Cals: {{meal.calories}}</h6>
+        <button (click)="editButtonHasBeenClicked(meal)">Edit</button>
+        <hr>
+      </div>
     </div>
   </div>
 

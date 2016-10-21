@@ -1,6 +1,5 @@
 ////////////////////// DEPENDENCIES AND VARIABLES //////////////////////
 var gulp = require('gulp');
-
 // used for concatenating/minifying bower files and other js/css
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -16,16 +15,13 @@ var lib = require('bower-files')({
     }
   }
 });
-
 // used for build and clean tasks.
 var utilities = require('gulp-util');
 var buildProduction = utilities.env.production;
 var del = require('del');
-
 // set up server with watchers and run typescript compiler in the shell.
 var browserSync = require('browser-sync').create();
 var shell = require('gulp-shell');
-
 // sass dependencies.
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');

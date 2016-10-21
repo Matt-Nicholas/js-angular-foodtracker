@@ -1,3 +1,13 @@
+$divBorderColor : #3399ff;
+
+body{
+  border: 1px solid black;
+  padding: 5px;
+  background-color: lightgray;
+  font-family: monospace;
+  text-align: center;
+}
+
 h1{
   color: blue;
 }
@@ -5,54 +15,92 @@ h1{
 h4, h5, h6{
   margin-top: 0;
   margin-bottom: 0;
+}
+
+h4{
   padding-bottom: 5px;
   padding-top: 5px;
 }
+
 h5, h6{
-  margin-top: 0;
-  margin-bottom: 0;
   padding-bottom: 1px;
   padding-top: 1px;
 }
+
 h3{
-  text-align: center;
   .edit-div{
   }
   .new-div{
   }
 }
 
-.edit-div{
-  width: 50%;
-  border: 1px solid orange;
-  h3{
-    color: orange;
-
-  }
-  button{
-    background-color: orange;
-    border-color: darkorange;
-    width: 20%;
-    margin: 10px;
-  }
-}
 .list-div{
+  text-align: left;
   button{
     background-color: skyblue;
     border-color: skyblue;
   }
 }
-.new-div{
+
+.new-div, .edit-div{
+  text-align: left;
+  margin-left: 25%;
   width: 50%;
-  border: 1px solid lightgreen;
-  h3{
-    color: darkgreen;
-  }
+  margin-bottom: 10px;
+  padding: 2px;
   button{
-    background-color: lightgreen;
-    border-color: green;
     width: 50%;
     margin-left: 25%;
     margin-top: 10px;
   }
+}
+
+.new-div{
+  background-color: white;
+  border: 5px inset lightgreen;
+  button{
+    background-color: lightgreen;
+    border-color: lightgreen;
+  }
+  h3{
+    color: lightgreen;
+  }
+}
+
+#stats-head{
+  text-align: left;
+  background-color: white;
+  border: 1px solid darkgray;
+  width: 50%;
+  margin-left: 25%;
+  font-weight: 400;
+}
+
+select{
+  width: 50%;
+  margin-left: 25%;
+}
+
+.scroll-box, #stats-div{
+  text-align: left;
+  background-color: white;
+  border: 5px inset $divBorderColor;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.edit-div{
+  background-color: white;
+  border: 5px outset orange;
+  button{
+    background-color: orange;
+    border-color: darkorange;
+  }
+  h3{
+    color: orange;
+  }
+}
+
+.high-cal{
+  color: red;
 }
