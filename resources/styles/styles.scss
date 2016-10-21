@@ -1,0 +1,58 @@
+h1{
+  color: blue;
+}
+
+h4, h5, h6{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+h5, h6{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
+h3{
+  text-align: center;
+  .edit-div{
+  }
+  .new-div{
+  }
+}
+
+.edit-div{
+  width: 50%;
+  border: 1px solid orange;
+  h3{
+    color: orange;
+
+  }
+  button{
+    background-color: orange;
+    border-color: darkorange;
+    width: 20%;
+    margin: 10px;
+  }
+}
+.list-div{
+  button{
+    background-color: skyblue;
+    border-color: skyblue;
+  }
+}
+.new-div{
+  width: 50%;
+  border: 1px solid lightgreen;
+  h3{
+    color: darkgreen;
+  }
+  button{
+    background-color: lightgreen;
+    border-color: green;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
+  }
+}

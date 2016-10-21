@@ -6,10 +6,16 @@ import {Meal} from './meal'
   <div class="container">
     <h1>Eat It!</h1>
     <new-meal
+      [childNotEditingMeal]="notEditingMeal"
       (newMealSender)="addMeal($event)"
     ></new-meal>
+    <edit-meal
+      [childSelectedMeal]="selectedMeal"
+      (doneClickedSender)="finishedEditing()"
+    ></edit-meal>
     <meal-list
       [childMealList]="mealList"
+      (clickSender)="showDetails($event)"
     ></meal-list>
     <h3>Total calories: {{calorieTotal()}}</h3>
   </div>
@@ -31,5 +37,16 @@ export class AppComponent {
   }
   addMeal(newMealFromChild: Meal){
     this.mealList.push(newMealFromChild);
+  }
+  notEditingMeal = true;
+  selectedMeal = null;
+  showDetails(clickedMeal: Meal){
+    this.selectedMeal = clickedMeal;
+    this.notEditingMeal = false;
+  }
+  finishedEditing(){
+    this.selectedMeal = null;
+    this.notEditingMeal = true;
+
   }
 }

@@ -1,17 +1,17 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal';
 
 @Component({
   selector: 'new-meal',
   template: `
-    <h1>Add a Meal</h1>
-    <div>
+    <div *ngIf="childNotEditingMeal" class="new-div">
+      <h3>New Meal</h3>
       <label>Food Name:</label>
       <input #name><br>
       <label>Description:</label>
       <input #description><br>
       <label>Calories:</label>
-      <input #calories type=number><br>
+      <input #calories class="cal-field" type=number><br>
       <button (click)="
         addClicked(name.value, description.value, calories.value);
         name.value='';
@@ -23,6 +23,7 @@ import { Meal } from './meal';
 })
 
 export class NewMealComponent {
+  @Input() childNotEditingMeal: boolean;
   @Output() newMealSender = new EventEmitter();
   addClicked(name: string, description: string, calories: string) {
     if(!name){
